@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*es para que el css modifique el padding apartir del borde (del borde para adentro)*/
+}
+
+body{
+    background-color: lightskyblue;
+}
+
+.contenedor{
+    width: 70%;
+    margin: 0 auto;
+}
+
+header{
+background-color: black;
+padding: 20px;
+display: flex;
+color: white;
+}
+
+header p{
+
+}
+header h1{
+
+}
+
+section{
+    padding: 40px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+section:nth-child(2) h2{ /*Le dice: mira todas selecciones pero agarra el primero hijo y modifica el h2*/
+    background-color: rgb(0, 92, 92);
+}
+/*
+^Es como hacer esto:
+.uno{
+    h2 {
+        background-color: brown;
+    }
+}
+*/
+section:nth-child(2) div p span{ /*modificando el span*/
+    background-color: orange;
+    padding: 10px;
+    margin: 40px;
+    border: 1px solid black;
+    outline: 5px solid salmon;
+    display: inline-block;
+}
+
+section:nth-child(3) div { /*Acá ejemplificamos las propiedades del modelo de caja*/
+    background-color: lightcoral;
+    width: 400px; /*(ancho)el width sollo funciona para elementos en bloque*/
+    height: 40px; /*(altos)Lo más recomendado es que el height sea automático*/
+    overflow: hidden;/*para controlar el desborde del contedido en el tamaño determinado. Esconde el contenido que se salió*/
+
+    /*overflow: scroll; /*inserta un scroller para ver el contenido que se desbordó*/
+    padding: 40px; /*(modifica el padding en el orden: arriba, derecha, abajo, izquiera (en el sentido de las manesillas del reloj))*/
+    margin: 40px auto;
+    border: 6px dotted saddlebrown;
+    outline: 10px solid lightgreen; /*para margen fuera del margin*/
+    border-radius: 20px;
+    border-top-left-radius: 40px;/*para bordear una esquina específica*/
+    box-shadow: 10px 20px 80px black, 20px 10px 5px orange ; /*si quiero que la sombra vaya a la izquierda el valor debe ser negativo. 
+                                                                Primer valor dirección de la sombra, segundo valor: dispercion en y, tercer 
+                                                                valor difuminación, cuarto valor: color. Para hacer varias sombras ponemos una ","
+                                                                 y luego los valores*/
+    transform: rotate(15deg); /*para rotar elementos DE CAJA*/
+}
